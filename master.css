@@ -1,0 +1,63 @@
+:root {
+  font-family: 'Montserrat', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+}
+
+body > div#cookie {
+  width: 100%;
+  position: fixed;
+  bottom: -100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(34, 34, 34, .75);
+  border-radius: 25px 25px 0 0;
+  z-index: 1000;
+  transition: 500ms;
+  animation: slideIn 500ms ease-in-out forwards;
+}
+
+body > div#cookie p {
+  text-align: center;
+  color: #ddd;
+  width: 80%;
+  margin: 0;
+  padding: 25px 0;
+}
+
+body > div#cookie a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+body > div#cookie button {
+  outline: none;
+  cursor: pointer;
+  transition: 300ms;
+  color: #0064a5;
+  font-size: .75em;
+  font-weight: 700;
+  background-color: rgba(255, 255, 255, 0.025);
+  border: 2px solid #0064a5;
+  border-radius: 500px;
+  padding: .75em 1em;
+  margin: 0;
+  transform: scale(.9);
+}
+
+body > div#cookie button:hover {
+  background-color: rgba(255, 255, 255, 0.075);
+}
+
+@keyframes slideIn {
+  to {
+    bottom: 0;
+  }
+}

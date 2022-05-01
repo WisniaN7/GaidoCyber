@@ -1,0 +1,408 @@
+:root {
+  font-family: 'Raleway', sans-serif;
+  --r: 0;
+  --g: 124;
+  --b: 204;
+}
+
+hr {
+  border-color: rgba(var(--r), var(--g), var(--b), 1);
+  border-style: solid;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+html {
+  background-color: #222;
+}
+
+body {
+  margin: 0;
+}
+
+div.separator {
+  width: 100%;
+  height: 5mm;
+}
+
+section {
+  width: 210mm;
+  height: 297mm;
+  margin: 0 auto;
+  position: relative;
+  background-color: #fff;
+  overflow-y: hidden;
+}
+
+section header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 16mm 0;
+  border-radius: 0 0 15mm 15mm;
+}
+
+section header > *{
+  margin: 0 7mm;
+}
+
+section header form, section header form input, section header form img, section header form label {
+  width: 40mm;
+  height: 40mm;
+  border-radius: 20mm;
+}
+
+section header form {
+  position: relative;
+}
+
+section header form input, section header form img , section header form label {
+  position: absolute;
+}
+
+section header form input {
+  opacity: 0;
+}
+
+section header form label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 150ms;
+}
+
+section header form label:hover {
+  background-color: rgba(235, 235, 255, 0.5);
+}
+
+section header form label.random {
+  background-color: rgba(235, 235, 255, 0.5);
+}
+
+section header form label.random:hover {
+  background-color: rgba(235, 235, 255, 0.75);
+}
+
+section header form label::before {
+  content: 'Zmień zdjęcie';
+  font-size: 9pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #222;
+  opacity: 0;
+  margin-top: 50%;
+  transition: 150ms;
+}
+
+section header form label::after {
+  content: '';
+  width: 33%;
+  height: 33%;
+  position: absolute;
+  background-image: url('img/Pic.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+  border-radius: 10px;
+  border: 3px dashed #222;
+  opacity: 0;
+  margin-top: -5%;
+  transition: 150ms;
+}
+
+section header form label.random:hover::before, section header form label.random:hover::after {
+  opacity: 1;
+}
+
+section header form label.random::before, section header form label:hover::before  {
+  content: 'Dodaj zdjęcie';
+  opacity: .75;
+}
+
+section header form label:not(.random):hover::before {
+  content: 'Zmień zdjęcie';
+}
+
+section header form label.random::after, section header form label:hover::after {
+  opacity: .75;
+}
+
+section header div {
+  width: 125mm;
+}
+
+section header div h1 {
+  font-size: 36pt;
+  font-weight: 400;
+  margin: 0 0 4.5mm 0;
+}
+
+.default {
+  animation: changeMe 2000ms linear infinite;
+  border-radius: 5px;
+  transition: 150ms;
+}
+
+.default:hover, .default:focus {
+  background-color: #f3f3f3;
+}
+
+section header div h1 span:first-of-type, section header div div.contactInfo p span, section header div div.contactInfo a span {
+  color: rgba(var(--r), var(--g), var(--b), 1);
+  font-weight: 700;
+}
+
+section header div div.contactInfo:first-of-type {
+  width: 40%;
+  float: left;
+}
+
+section header div div.contactInfo:last-of-type {
+  width: 60%;
+  float: right;
+}
+
+section header div div.contactInfo p, section header div div.contactInfo a {
+  width: 100%;
+  font-size: 13.75pt;
+  margin: 0;
+}
+
+section header div div.contactInfo:first-of-type p, section header div div.contactInfo:first-of-type a {
+  text-align: left;
+}
+
+section header div div.contactInfo:last-of-type p, section header div div.contactInfo:last-of-type a {
+  text-align: right;
+  float: right;
+}
+
+section header div div.contactInfo p span, section header div div.contactInfo a span {
+  font-size: 10.75pt;
+  text-transform: uppercase;
+}
+
+section header div div.contactInfo p span strong, section header div div.contactInfo a span strong {
+  font-size: 13.75pt;
+}
+
+section > div {
+  width: 140mm;
+  margin: 24mm auto;
+}
+
+section > div a {
+  width: 3mm;
+  height: 3mm;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 25mm;
+  left: 5mm;
+  font-size: 10pt;
+  color: #fff;
+  border-radius: 3mm;
+  background-color: rgba(var(--r), var(--g), var(--b), .5);
+  cursor: pointer;
+  transition: 150ms;
+}
+
+section > div > a:hover {
+  background-color: rgba(var(--r), var(--g), var(--b), .75);
+}
+
+section > div h2 {
+  font-size: 10.75pt;
+  font-weight: 700;
+  color: rgba(var(--r), var(--g), var(--b), 1);
+  text-transform: uppercase;
+  margin: 0 0 2mm 15mm;
+}
+
+section > div h2::first-letter {
+  font-size: 13.75pt;
+}
+
+section > div hr {
+  width: 140mm;
+  position: relative;
+  overflow: visible;
+}
+
+section > div hr::after {
+  content: '';
+  width: 7mm;
+  height: 7mm;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 7mm;
+  border: 2px solid rgba(var(--r), var(--g), var(--b), 1);
+  position: absolute;
+  top: -4mm;
+  left: -4mm;
+}
+/*
+section > div#experience hr::after {
+  background-image: url('img/Experience.svg');
+  background-size: 60%;
+}
+
+section > div#education hr::after {
+  background-image: url('img/Education.svg');
+  background-size: 75%;
+}
+
+section > div#skills hr::after {
+  background-image: url('img/#.svg');
+  background-size: 75%;
+}
+*/
+section > div div.section h3 {
+  max-width: 50%;
+  font-size: 9pt;
+  font-weight: 400;
+  color: rgba(var(--r), var(--g), var(--b), 1);
+  text-transform: uppercase;
+  margin: 7mm 0 1.5mm 22mm;
+}
+
+section > div div.section h3::first-letter {
+  font-size: 11pt;
+}
+
+section > div div.section p {
+  max-width: 50%;
+  display: flex;
+  align-items: center;
+  font-size: 9pt;
+  margin: 1.5mm 0 1.5mm 22mm;
+}
+
+section > div div.section p.date {
+  max-width: 33%;
+  float: right;
+  color: rgba(var(--r), var(--g), var(--b), 1);
+  text-align: right;
+  margin-top: -5.8mm;
+}
+
+section > div div.section a.additional {
+  top: -5mm;
+  left: 15mm;
+  overflow: hidden;
+  background-color: #eee;
+  transition: 150ms;
+}
+
+section > div div.section a.additional:hover {
+  background-color: #d8d8d8;
+  overflow: visible;
+}
+
+section > div div.section a.additional::before {
+  content: '';
+  position: absolute;
+  left: -8px;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid #222;
+  opacity: 0;
+  transition: 150ms;
+}
+
+section > div div.section a.additional::after {
+  content: 'Dodaj szczegółowe informacje (tylko jeśli wymagane)';
+  width: 100px;
+  position: absolute;
+  left: -83px;
+  margin-left: -25px;
+  font-size: 6pt;
+  text-align: center;
+  color: #fff;
+  background-color: #222;
+  padding: 5px 0;
+  border-radius: 5px;
+  cursor: default;
+  opacity: 0;
+  transition: 150ms;
+}
+
+section > div div.section a.additional:hover::after, section > div div.section a.additional:hover::before {
+  opacity: .85;
+}
+
+section > div div.section a.additional.open::after {
+  content: 'Ukryj szczegółowe informacje';
+}
+
+section > div div.section div.additional {
+  max-height: 0;
+  overflow: hidden;
+  transition: 150ms;
+}
+
+section > div div.section div.additional.open {
+  max-height: 45px;
+  margin-top: -5mm;
+}
+
+section > div div.section p.description {
+  max-width: none;
+}
+
+section > div div.section p.description::first-letter {
+  padding-left: 12mm;
+}
+
+footer {
+  width: 187mm;
+  height: 35mm;
+  position: absolute;
+  top: calc(262mm - 2px);
+  left: 11.5mm;
+  border-top: 2px solid rgba(var(--r), var(--g), var(--b), 1);
+  background-color: #fff;
+}
+
+footer p {
+  color: #3F3F3F;
+  margin: 10mm 6mm;
+}
+
+@media print {
+  div.separator, section header form label::after, section header form label::before {
+    display: none;
+  }
+
+  section header form label.random {
+    background-color: transparent;
+  }
+
+  .default {
+    animation: none;
+    border-radius: 0;
+  }
+
+  .default:hover, .default:focus {
+    background-color: transparent;
+  }
+}
+
+@keyframes changeMe {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .65;
+  }
+  100% {
+    opacity: 1;
+  }
+}

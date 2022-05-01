@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+
+header {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: fixed;
+  top: 0;
+  animation: hide 3500ms forwards;
+  transition: 300ms;
+  z-index: 1000;
+}
+
+header:hover {
+  top: 0;
+  animation: none;
+}
+
+header > div {
+  width: 100%;
+  height: 74px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid #fff;
+}
+
+header div span {
+  width: 135px;
+  height: 50px;
+  background-image: url('img/Logo_G.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-left: 75px;
+}
+
+header div div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header div div label {
+  font-family: 'PT Sans', sans-serif;
+  color: #fff;
+  text-transform: capitalize;
+  margin-right: 15px;
+}
+
+header div div input {
+  outline: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 35px;
+  border: 1px solid #fff;
+  padding: 0;
+}
+
+header div div input::-webkit-color-swatch {
+  background: none;
+  border-radius: 35px;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+
+header div div input::-webkit-color-swatch-wrapper {
+  background: none;
+  border: none;
+  border-radius: 35px;
+  padding: 0;
+}
+
+header div button {
+  background-color: #fff;
+  outline: none;
+  border: none;
+  width: 175px;
+  height: 100%;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+p:hover, h2:hover, h1:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+@keyframes hide {
+  0% {
+    top: 0;
+  }
+  75% {
+    top: 0;
+  }
+  100% {
+    top: -75px;
+  }
+}

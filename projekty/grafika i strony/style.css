@@ -1,0 +1,353 @@
+html, body {
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+#main {
+  width: 100vw;
+  height: 100vh;
+  background-color: #222;
+  overflow: hidden;
+}
+
+#main div.slider {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+}
+
+#main div.slider > div {
+  width: calc(50% - (100px / 2));
+  height: 0;
+  position: absolute;
+  top: calc(50% - 5px);
+  border: 3px solid #fff;
+  cursor: pointer;
+}
+
+#main div.slider div.top {
+  transform: rotate(180deg);
+}
+
+#main div.slider div.bottom {
+  right: 0;
+}
+
+#main div.slider > div div.half-circle {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  left: -103px;
+  top: calc(-100px / 2);
+  border: 5px solid #fff;
+  border-radius: 75px;
+}
+
+#main div.slider > div div.half-circle span {
+  width: 25%;
+  height: 25%;
+  transform: rotate(45deg);
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent #fff #fff transparent;
+  margin-left: 38%;
+  margin-top: 25%;
+}
+
+#main > div.designer, #main > div.drawist {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
+#main > div.designer::before, #main > div.drawist::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: inherit;
+  filter: saturate(50%) brightness(50%);
+  transition: 2000ms;
+  transition-timing-function: ease-out;
+  z-index: 0;
+}
+
+#main > div.designer {
+  background-position: bottom;
+  background-image: url('img/animefight.png');
+}
+
+#main > div.drawist {
+  top: 50%;
+  background-image: url('img/smallbivi.png');
+  background-position: top;
+}
+
+#main > div.blur {
+  height: 25%;
+}
+
+#main > div.blur::before {
+  filter: saturate(25%) brightness(25%);
+}
+
+#main > div.focus {
+  height: 75%;
+  cursor: pointer;
+}
+
+#main > div.focus::before {
+  filter: saturate(75%) brightness(75%);
+}
+
+#main > div h2 {
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  z-index: 5;
+  transition: opacity 500ms, transform 2000ms;
+  user-select: none;
+}
+
+#main > div.blur h2 {
+  opacity: 0;
+}
+
+#main > div.focus h2 {
+  transform: scale(1.75);
+}
+
+section.designer, section.drawist {
+  height: 100vh;
+  display: none;
+  overflow-y: scroll;
+}
+
+section.designer {
+  background-color: #222;
+}
+
+section.drawist {
+  background-color: #fff;
+}
+
+section header {
+  height: 75px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: sticky;
+  top: 0vh;
+  background-color: #111;
+  border-radius: 0 0 25px 25px;
+  overflow: hidden;
+  z-index: 100;
+}
+
+section.designer header {
+  background-color: #111;
+  box-shadow: 0 5px 15px #000;
+}
+
+section.drawist header {
+  background-color: #eee;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+}
+
+section header.exit {
+  cursor: pointer;
+}
+
+section header h2 {
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  margin: 25px 0 0 0;
+  transition: 300ms;
+}
+
+section.designer header h2 {
+  color: #fff;
+}
+
+section.drawist header h2 {
+  color: #444;
+}
+
+section header.exit h2 {
+  margin: -45px 0 0 0;
+}
+
+section header div {
+  width: 35.6px;
+  height: 35.6px;
+  margin-top: 50px;
+  animation: bop 1500ms infinite;
+}
+
+section header div span {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #fff transparent transparent transparent;
+  transform: rotate(45deg);
+}
+
+section.designer header div span {
+  border-color: #fff transparent transparent transparent;
+}
+
+section.drawist header div span {
+  border-color: #444 transparent transparent transparent;
+}
+
+section header div span:last-of-type {
+  transform: rotate(-45deg);
+}
+
+section div.wrapper {
+  width: 80%;
+  margin: auto;
+}
+
+section div.wrapper div.img {
+  width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  margin: 50px 0;
+}
+
+section.drawist div.wrapper div.img {
+  transform: skewY(15deg);
+}
+
+section.designer div.wrapper div.img {
+  transform: skewY(-15deg);
+}
+
+section.drawist div.wrapper div.img img {
+  width: 100%;
+  transform: skewY(-15deg) scale(1.35);
+}
+
+section.designer div.wrapper div.img img {
+  width: 100%;
+  transform: skewY(15deg) scale(1.35);
+}
+
+@media only screen and (min-width: 768px), (orientation: landscape) {
+  #main div.slider {
+    height: 100%;
+    width: initial;
+    top: initial;
+    left: 50%;
+  }
+
+  #main div.slider > div {
+    width: 0;
+    height: calc(50% - (100px / 2));
+    top: initial;
+    left: calc(50% - 5px);
+  }
+
+  #main div.slider div.bottom {
+    bottom: 0;
+    right: initial;
+  }
+
+  #main div.slider > div div.half-circle {
+    width: 100px;
+    height: 100px;
+    top: -103px;
+    left: calc(-100px / 2);
+  }
+
+  #main div.slider > div div.half-circle span {
+    border-color: transparent transparent #fff #fff;
+    margin-top: 0;
+    margin-left: 20px;
+  }
+
+  #main > div.designer, #main > div.drawist {
+    width: 50%;
+    height: 100%;
+  }
+
+  #main > div.designer {
+    background-position: right;
+  }
+
+  #main > div.drawist {
+    top: initial;
+    left: 50%;
+    background-position: left;
+  }
+
+  #main > div.blur {
+    width: 25%;
+    height: 100%;
+  }
+
+  #main > div.focus {
+    width: 75%;
+    height: 100%;
+  }
+
+  section div.wrapper {
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 50px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  section div.wrapper div.img {
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 15px;
+    margin: 50px .5%;
+  }
+
+  section.drawist div.wrapper div.img {
+    transform: skewY(10deg);
+  }
+
+  section.designer div.wrapper div.img {
+    transform: skewY(-10deg);
+  }
+
+  section.drawist div.wrapper div.img img {
+    width: 100%;
+    transform: skewY(-10deg) scale(1.35);
+  }
+
+  section.designer div.wrapper div.img img {
+    width: 100%;
+    transform: skewY(10deg) scale(1.35);
+  }
+}
+
+@keyframes bop {
+  0% {
+    margin-top: 52px;
+  }
+  50% {
+    margin-top: 48px;
+  }
+  100% {
+    margin-top: 52px;
+  }
+}

@@ -1,0 +1,102 @@
+header.edit {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: fixed;
+  top: 0;
+  animation: hide 3500ms forwards;
+  transition: 300ms;
+  z-index: 1000;
+}
+
+header.edit:hover {
+  top: 0;
+  animation: none;
+}
+
+header.edit > div {
+  width: 100%;
+  height: 74px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 124, 204, 0.1);
+  border-bottom: 1px solid #007CCC;
+}
+
+header.edit div a {
+  width: 135px;
+  height: 50px;
+  background-image: url('img/Logo_G.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-left: 75px;
+}
+
+header.edit div div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header.edit div div label {
+  font-family: 'PT Sans', sans-serif;
+  color: #222;
+  text-transform: capitalize;
+  margin-right: 15px;
+}
+
+header.edit div div input {
+  outline: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 35px;
+  border: 1px solid #fff;
+  padding: 0;
+}
+
+header.edit div div input::-webkit-color-swatch {
+  background: none;
+  border-radius: 35px;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+
+header.edit div div input::-webkit-color-swatch-wrapper {
+  background: none;
+  border: none;
+  border-radius: 35px;
+  padding: 0;
+}
+
+header.edit div button {
+  background-color: #fff;
+  outline: none;
+  border: none;
+  width: 175px;
+  height: 100%;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+@media print {
+  header.edit {
+    display: none;
+  }
+}
+
+@keyframes hide {
+  0% {
+    top: 0;
+  }
+  75% {
+    top: 0;
+  }
+  100% {
+    top: -75px;
+  }
+}

@@ -1,0 +1,1 @@
+Aby zmieniæ logo i wideo w tle, nale¿y podmieniæ pliki "Logo.png" i "Wideo.mp4" nie zmieni¹j¹c nazwy i rozszerzenia.
