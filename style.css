@@ -28,10 +28,10 @@ header {
 }
 
 header img {
-   height: 30px;
-   float: left;
-   margin: 10px calc(50% - 60px) 0 calc(50% - 15px);
- }
+  height: 30px;
+  float: left;
+  margin: 10px calc(50% - 60px) 0 calc(50% - 15px);
+}
 
 header div {
   width: 30px;
@@ -88,16 +88,17 @@ header nav ul {
   display: flex;
   flex-direction: column;
   position: absolute;
+  right: -140%;
   list-style: none;
   margin: 0;
   padding: 0;
   background-color: #262626;
   transform: skewX(5deg);
-  animation: slideOut 500ms ease-in-out forwards;
+  transition: 500ms;
 }
 
 header.open nav ul {
-  animation: slideIn 500ms ease-in-out forwards;
+  right: -40%;
 }
 
 header nav ul li {
@@ -300,7 +301,7 @@ div.tiles a:hover h3 {
 }
 
 #services div.tiles a:nth-of-type(2) {
-  background-image: url('img/serv.jpg');
+  background-image: url('img/www.webp');
 }
 
 #services div.tiles a:nth-of-type(3) {
@@ -308,7 +309,7 @@ div.tiles a:hover h3 {
 }
 
 #services div.tiles a:nth-of-type(4) {
-  background-image: url('img/#.jpg');
+  background-image: url('img/serv.jpg');
 }
 
 #services div.lists {
@@ -528,7 +529,7 @@ div.tiles a:hover h3 {
 
   header img {
     display: none;
-   }
+  }
 
   header div {
     display: none;
@@ -544,6 +545,7 @@ div.tiles a:hover h3 {
   }
 
   header nav ul {
+    right: 0;
     flex-direction: row;
     background-color: transparent;
     transform: none;
@@ -919,33 +921,17 @@ div.tiles a:hover h3 {
   }
 }
 
-@keyframes slideIn {
-  from {
-    right: -140%;
-  }
-  to {
-    right: -40%;
-  }
-}
-
-@keyframes slideOut {
-  from {
-    right: -40%;
-  }
-  to {
-    right: -140%;
-  }
-}
-
 @keyframes bop {
   0% {
     margin-top: 5px;
     margin-top: 5px;
   }
+
   50% {
     margin-top: -5px;
     margin-top: -5px;
   }
+  
   100% {
     margin-top: 5px;
     margin-top: 5px;
@@ -957,6 +943,7 @@ div.tiles a:hover h3 {
     opacity: 0;
     margin-left: 50%;
   }
+  
   to {
     opacity: 1;
     margin-left: 0;
